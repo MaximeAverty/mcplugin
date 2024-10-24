@@ -1,0 +1,11 @@
+name: TrollPlugin
+version: '1.0-SNAPSHOT'
+main: me.acid.trollPlugin.TrollPlugin
+api-version: '1.21'
+authors: [ AcidSenpai ]
+description: Mon premier plugins de test
+website: www.google.com
+commands:
+  troll:
+    description: Troller n'importe quel joueur.
+    usage: /<command> <player>

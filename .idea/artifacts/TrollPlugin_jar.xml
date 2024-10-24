@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TrollPlugin:jar">
+    <output-path>$USER_HOME$/Desktop/spigot-server/plugins</output-path>
+    <root id="archive" name="TrollPlugin.jar">
+      <element id="module-output" name="TrollPlugin" />
+    </root>
+  </artifact>
+</component>
