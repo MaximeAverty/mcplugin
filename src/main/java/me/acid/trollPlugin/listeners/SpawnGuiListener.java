@@ -57,7 +57,7 @@ public class SpawnGuiListener implements Listener {
                         target.getWorld().spawnEntity(targetPos, EntityType.SILVERFISH);
                     }
 
-                    player.sendMessage(CommandsManager.prefix + number + "silverfish spawn sur " + ChatColor.YELLOW + target.getDisplayName());
+                    player.sendMessage(CommandsManager.prefix + number + " silverfish spawn sur " + ChatColor.YELLOW + target.getDisplayName());
                     player.closeInventory();
                 } catch (NumberFormatException err) {
                     event.getWhoClicked().sendMessage(CommandsManager.prefix + "&cErreur lors de la récupération du nombre");
