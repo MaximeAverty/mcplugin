@@ -9,7 +9,8 @@ public class ListenersManager {
 
         PluginManager pm = plugin.getServer().getPluginManager();
 
-        pm.registerEvents(new MenuListener(), plugin);
+        pm.registerEvents(new MenuListener(plugin), plugin);
+
 
     }
 

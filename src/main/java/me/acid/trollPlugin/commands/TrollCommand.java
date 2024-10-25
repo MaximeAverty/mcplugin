@@ -34,7 +34,7 @@ public class TrollCommand implements CommandExecutor {
         }
 
 
-        new TrollGui(target);
+        new TrollGui(target, player);
 
         return true;
     }

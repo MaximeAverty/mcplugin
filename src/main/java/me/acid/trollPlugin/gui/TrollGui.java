@@ -18,7 +18,7 @@ public class TrollGui {
     public static final String menuTitle = "§3Troll menu";
 
 
-    public TrollGui(Player target) {
+    public TrollGui(Player target, Player player) {
 
         Inventory inv = Bukkit.createInventory(null, 27, menuTitle);
 
@@ -39,10 +39,10 @@ public class TrollGui {
 
         inv.setItem(10, killSword);
 
-        ItemStack zombieHead = new ItemStack(Material.ZOMBIE_HEAD);
+        ItemStack zombieHead = new ItemStack(Material.SILVERFISH_SPAWN_EGG);
         ItemMeta zombieHeadMeat = zombieHead.getItemMeta();
         zombieHeadMeat.setDisplayName("§2Spawn");
-        zombieHeadMeat.setLore(List.of("§fSpawn un zombie sur le joueur"));
+        zombieHeadMeat.setLore(List.of("§fSpawn silverfish sur le joueur"));
         zombieHead.setItemMeta(zombieHeadMeat);
 
         inv.setItem(12, zombieHead);
@@ -73,7 +73,7 @@ public class TrollGui {
             }
         }
 
-        target.openInventory(inv);
+        player.openInventory(inv);
 
     }
 
