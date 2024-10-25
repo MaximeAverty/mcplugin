@@ -3,15 +3,15 @@ package me.acid.trollPlugin.listeners;
 import me.acid.trollPlugin.commands.CommandsManager;
 import me.acid.trollPlugin.gui.SpawnGUI;
 import me.acid.trollPlugin.gui.TrollGui;
-import me.acid.trollPlugin.modules.KillPlayer;
-import me.acid.trollPlugin.modules.SpawnSilverFish;
+import me.acid.trollPlugin.modules.KillTarget;
+import me.acid.trollPlugin.modules.StrikeTarget;
+import me.acid.trollPlugin.modules.TpTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -44,14 +44,26 @@ public class MenuListener implements Listener {
             switch (clickedItem.getItemMeta().getDisplayName()) {
 
                 case "§cKill":
-                    KillPlayer.kill(target);
+                    KillTarget.kill(target);
                     player.sendMessage(CommandsManager.prefix + "§e" + targetName + " §fa été tué");
+                    player.closeInventory();
                     break;
 
                 case "§2Spawn":
                     new SpawnGUI(target, player, plugin);
                     break;
 
+                case "§bStrike":
+                    player.sendMessage(CommandsManager.prefix + "§e" + targetName + " §fa reçu la foudre");
+                    StrikeTarget.strike(target);
+                    player.closeInventory();
+                    break;
+
+                case "§9Lift":
+                    player.sendMessage(CommandsManager.prefix + "§e" + targetName + " §f a été TP dans en l'air");
+                    TpTarget.tp(target);
+                    player.closeInventory();
+                    break;
             }
 
         }

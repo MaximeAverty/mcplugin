@@ -2,7 +2,7 @@ package me.acid.trollPlugin.modules;
 
 import org.bukkit.entity.Player;
 
-public class KillPlayer {
+public class KillTarget {
 
     public static void kill(Player target) {
 
