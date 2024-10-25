@@ -60,7 +60,7 @@ public class MenuListener implements Listener {
                     break;
 
                 case "§9Lift":
-                    player.sendMessage(CommandsManager.prefix + "§e" + targetName + " §f a été TP dans en l'air");
+                    player.sendMessage(CommandsManager.prefix + "§e" + targetName + " §f a été TP en l'air");
                     TpTarget.tp(target);
                     player.closeInventory();
                     break;
