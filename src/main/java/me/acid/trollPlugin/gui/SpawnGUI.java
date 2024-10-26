@@ -1,5 +1,6 @@
 package me.acid.trollPlugin.gui;
 
+import me.acid.trollPlugin.TrollPlugin;
 import me.acid.trollPlugin.listeners.SpawnGuiListener;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -13,7 +14,7 @@ public class SpawnGUI {
 
     public static String title = "§3Combien de silverfish";
 
-    public SpawnGUI(Player target, Player player, JavaPlugin plugin) {
+    public SpawnGUI(Player target, Player player) {
 
         Inventory inv = Bukkit.createInventory(null, 9, title);
 
@@ -28,7 +29,7 @@ public class SpawnGUI {
 
         }
 
-        Bukkit.getServer().getPluginManager().registerEvents(new SpawnGuiListener(player, target), plugin);
+        Bukkit.getServer().getPluginManager().registerEvents(new SpawnGuiListener(player, target), TrollPlugin.getPlugin());
         player.openInventory(inv);
 
     }

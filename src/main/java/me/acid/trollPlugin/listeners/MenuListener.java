@@ -50,7 +50,7 @@ public class MenuListener implements Listener {
                     break;
 
                 case "§2Spawn":
-                    new SpawnGUI(target, player, plugin);
+                    new SpawnGUI(target, player);
                     break;
 
                 case "§bStrike":

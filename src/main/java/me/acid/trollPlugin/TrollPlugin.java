@@ -7,6 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TrollPlugin extends JavaPlugin {
 
+    private static TrollPlugin plugin;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -15,6 +17,12 @@ public final class TrollPlugin extends JavaPlugin {
         CommandsManager.registerCommand(this);
         ListenersManager.registerListener(this);
 
+        plugin = this;
+
+    }
+
+    public static TrollPlugin getPlugin() {
+        return plugin;
     }
 
     @Override
